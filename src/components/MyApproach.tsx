@@ -2,9 +2,13 @@ import React from "react";
 import { Flex, Box, Text, Image } from "@chakra-ui/react";
 import piano from "../assets/piano.jpg";
 
-const MyApproach = () => {
+interface MyApproachProps {
+	id: string;
+}
+
+const MyApproach = ({ id }: MyApproachProps) => {
 	return (
-		<Box bg="pink.50" w="60%" h="20%">
+		<Box bg="pink.50" h="700px" w="full" id={id}>
 			<Text color="#4C2A85" fontWeight="bold" fontSize="5xl">
 				My Approach
 			</Text>

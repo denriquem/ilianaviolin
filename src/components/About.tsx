@@ -1,9 +1,13 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 
-const About = () => {
+interface AboutProps {
+	id: string;
+}
+
+const About = ({ id }: AboutProps) => {
 	return (
-		<Box w="60%" mt={20}>
+		<Box w="full" mt={20} id={id}>
 			<Text color="#4C2A85" fontWeight="bold" fontSize="5xl">
 				About Iliana
 			</Text>
@@ -17,7 +21,7 @@ const About = () => {
 				She has also performed in a variety of musical ensembles over the years,
 				and taken leadership roles in orchestras. She completed a master’s
 				degree in literature before deciding to return to all things violin and
-				piano.At the age of fifteen, Iliana took on her first piano student
+				piano. At the age of fifteen, Iliana took on her first piano student
 				after taking Suzuki teacher training sessions.
 			</Text>
 			<Text color="#4C2A85" fontWeight="bold" fontSize="xl">
