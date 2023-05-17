@@ -8,27 +8,62 @@ import {
 	useToast,
 } from "@chakra-ui/react";
 
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
 	const [showContactForm, setShowContactForm] = useState(false);
 	const [firstName, setFirstname] = useState("");
 	const [lastName, setLastname] = useState("");
+	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
+
 	const toast = useToast();
 
-	const handleSendMessage = () => {
-		console.log("message sent");
-		toast({
-			title: "Message sent!",
-			description: "Your message has been sent to Iliana",
-			status: "success",
-			duration: 9000,
-			isClosable: true,
-		});
+	const handleSendMessage = async () => {
+		const templateParams = {
+			firstName,
+			lastName,
+			email,
+			message,
+		};
+
+		const serviceId = process.env.REACT_APP_SERVICE_ID;
+		const templateId = process.env.REACT_APP_TEMPLATE_ID;
+		const publicEmailId = process.env.REACT_APP_EMAIL_PUBLIC_KEY;
+
+		try {
+			if (serviceId && templateId && publicEmailId) {
+				const response = await emailjs.send(
+					serviceId,
+					templateId,
+					templateParams,
+					publicEmailId
+				);
+				console.log(response);
+
+				toast({
+					title: "Message sent!",
+					description: "Your message has been sent to Iliana",
+					status: "success",
+					duration: 9000,
+					isClosable: true,
+				});
+			}
+		} catch (err) {
+			toast({
+				title: "Please try again",
+				description: "There was a problem sending your message ",
+				status: "error",
+				duration: 9000,
+				isClosable: true,
+			});
+			console.log(err);
+		}
 		setShowContactForm(false);
 	};
 
 	return (
-		<Box>
+		<Box id="contact">
 			<Button
 				ml="350px"
 				bg="#4C2A85"
@@ -58,6 +93,13 @@ const Contact = () => {
 						placeholder="Last Name"
 						onChange={(event: ChangeEvent<HTMLInputElement>) =>
 							setLastname(event.target.value)
+						}
+					/>
+					<Input
+						variant="flushed"
+						placeholder="Email"
+						onChange={(event: ChangeEvent<HTMLInputElement>) =>
+							setEmail(event.target.value)
 						}
 					/>
 					<Textarea

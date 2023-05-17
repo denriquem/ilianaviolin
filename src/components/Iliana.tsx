@@ -3,7 +3,7 @@ import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import { StarIcon, EmailIcon } from "@chakra-ui/icons";
 
 import orchstra from "../assets/orchestra.jpg";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 const Iliana = () => {
 	return (
@@ -107,19 +107,27 @@ const Iliana = () => {
 							></i>
 						</Text>
 					</Link>
-					<Text
-						fontSize="lg"
-						color="whiteAlpha.900"
-						textAlign="center"
-						mt={10}
-						cursor="pointer"
-						_hover={{
-							color: "#4C2A85",
-						}}
+					<Link
+						activeClass="active"
+						to="contact"
+						smooth={true}
+						offset={-70}
+						duration={1900}
 					>
-						Contact
-						<EmailIcon ml={2} mb="3px" />
-					</Text>
+						<Text
+							fontSize="lg"
+							color="whiteAlpha.900"
+							textAlign="center"
+							mt={10}
+							cursor="pointer"
+							_hover={{
+								color: "#4C2A85",
+							}}
+						>
+							Contact
+							<EmailIcon ml={2} mb="3px" />
+						</Text>
+					</Link>
 				</Flex>
 			</Box>
 		</Box>
