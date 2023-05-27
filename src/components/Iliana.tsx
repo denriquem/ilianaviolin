@@ -29,7 +29,7 @@ const Iliana = () => {
 					backdropFilter="contrast(0.5)"
 					filter="contrast(300%)"
 				>
-					Iliana is a violin and piano teacher based in Cambridge
+					Iliana Marinov is a violin and piano teacher based in Cambridge
 				</Heading>
 				<Flex gap={8} m="auto" justifyContent="center">
 					<Link

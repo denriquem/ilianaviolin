@@ -39,12 +39,28 @@ const Testimonials = ({ id }: TestimonialProps) => {
 					<Text
 						color="#4C2A85"
 						fontWeight="bold"
+						fontSize="lg"
+						textAlign="left"
+					>
+						- Parent of violin student, age 6
+					</Text>
+					<Text
+						color="#4C2A85"
+						fontWeight="bold"
 						fontSize="xl"
 						textAlign="left"
 					>
-						"Iliana is a pleasure to work with. She is techically accomplished,
+						“Iliana is a pleasure to work with. She is techically accomplished,
 						clear and patient, whilst providing structured lessons with clear
-						objectives."
+						objectives.”
+					</Text>
+					<Text
+						color="#4C2A85"
+						fontWeight="bold"
+						fontSize="lg"
+						textAlign="left"
+					>
+						- Adult piano student
 					</Text>
 				</Stack>
 				<Box
