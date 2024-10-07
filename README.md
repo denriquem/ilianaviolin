@@ -2,7 +2,7 @@
 
 ## Description
 
-A personal portfolio website displaying for Iliana Marinov's piano and violin teaching. Here's the [link](https://ilianaviolin.com/).
+A personal portfolio website for Iliana Marinov's piano and violin teaching. Here's the [link](https://ilianaviolin.com/).
 
 ## Screenshots
 
